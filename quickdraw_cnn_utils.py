@@ -1,6 +1,7 @@
 import requests, io, torch
 import numpy as np
 from torch.utils.data import Dataset
+from IPython.core.display import display, HTML
 
 def MasterDset(n_imgs, n_test, linklist, labelnames):
     data1 = np.empty_like(np.zeros([1,784]))

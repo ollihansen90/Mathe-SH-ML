@@ -1,3 +1,7 @@
+import requests, io, torch
+import numpy as np
+from torch.utils.data import Dataset
+
 def MasterDset(n_imgs, n_test, linklist, labelnames):
     data1 = np.empty_like(np.zeros([1,784]))
     data2 = np.empty_like(np.zeros([1,784]))
@@ -153,7 +157,7 @@ function redraw(){
 '''
         display(HTML(canvas_html)) 
 
-def predict_func(img_data):
+def predict_func(img_data, model, DS_test, canvas_size, device):
     #transform the list into a 2d array
     img_data = np.asarray(img_data, dtype=np.float32).reshape(*canvas_size)
     #transform the numpy array into a torch tensor
